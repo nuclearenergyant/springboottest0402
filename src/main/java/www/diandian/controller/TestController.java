@@ -4,7 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import www.diandian.dao.AddressMapper;
 import www.diandian.dao.UserinfoDao;
+import www.diandian.entity.Address;
 import www.diandian.entity.UserInfo;
 
 import java.util.HashMap;
@@ -36,12 +38,14 @@ public class TestController {
     * */
     @Autowired
     private UserinfoDao userinfoDao;
+    @Autowired
+    private AddressMapper addressMapper;
 
     @RequestMapping("/saveUser")
     @ResponseBody
     public Object SaveUser(){
         System.out.println("======================================");
-        UserInfo userInfo =new UserInfo("xxx2","test2");
+        UserInfo userInfo =new UserInfo(" 大时代","test2");
         userinfoDao.saveUserInfo(userInfo);
         Map map=new HashMap<String,Object>();
         map.put("code",0);
@@ -82,6 +86,34 @@ public class TestController {
         map.put("code",0);
         map.put("message","查看成功");
         map.put("result",allUser);
+        return map;
+    }
+
+
+    /*
+    * 根据id返回地址信息
+    * */
+    @RequestMapping("/getAddressByID")
+    @ResponseBody
+    public Address getAddressByID(int id){
+        return addressMapper.selectByPrimaryKey(id);
+    }
+
+    /*
+     * 根据id删除地址信息
+     * */
+    @RequestMapping("/delAddressByID")
+    @ResponseBody
+    public Object delAddressByID(int id){
+        int i = addressMapper.deleteByPrimaryKey(id);
+        Map map=new HashMap<String,Object>();
+        if (i>0){
+            map.put("code",0);
+            map.put("message","删除成功");
+        }else {
+            map.put("code",1);
+            map.put("message","删除失败");
+        }
         return map;
     }
 }
