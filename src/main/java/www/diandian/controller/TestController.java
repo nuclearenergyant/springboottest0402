@@ -114,7 +114,7 @@ public class TestController {
             map.put("code",1);
             map.put("message","删除失败");
         }
-
+        System.out.println("输出测试");
         return map;
     }
 }
