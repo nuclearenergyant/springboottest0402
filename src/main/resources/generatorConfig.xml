@@ -48,6 +48,8 @@
         <!-- 指定数据库表 多个表示,可用多个table标签-->
         <table tableName="address" domainObjectName="Address" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="bill" domainObjectName="Bill" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false"></table>
     </context>
 
 
