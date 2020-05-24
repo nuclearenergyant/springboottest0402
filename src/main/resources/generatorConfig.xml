@@ -50,6 +50,8 @@
                enableSelectByExample="false" selectByExampleQueryId="false"></table>
         <table tableName="bill" domainObjectName="Bill" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="userinfo" domainObjectName="UserInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false"></table>
     </context>
 
 
