@@ -1,4 +1,4 @@
-package www.diandian.Controller;
+package www.diandian.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
